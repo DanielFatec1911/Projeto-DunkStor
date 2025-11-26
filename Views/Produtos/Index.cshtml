@@ -1,0 +1,61 @@
+﻿@model IEnumerable<DunkStore.Models.Produto>
+
+@{
+    ViewData["Title"] = "Inventário";
+}
+
+<h1 class="mb-4">Produtos</h1>
+
+<div class="card shadow border-0 mt-4">
+    <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
+        <h4 class="mb-0 font-monospace">Inventário de Tênis</h4>
+        <a asp-action="Create" class="btn btn-orange btn-sm">+ Novo Produto</a>
+    </div>
+
+    <div class="card-body p-0">
+        <table class="table table-striped table-hover mb-0 align-middle">
+            <thead class="table-dark">
+                <tr>
+                    <th>Imagem</th>
+                    <th>@Html.DisplayNameFor(model => model.Nome)</th>
+                    <th>@Html.DisplayNameFor(model => model.Categoria)</th>
+                    <th>@Html.DisplayNameFor(model => model.Preco)</th>
+                    <th class="text-end">Ações</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td style="width: 80px;">
+                            <img src="@item.ImagemUrl" class="rounded" style="width: 50px; height: 50px; object-fit: cover;">
+                        </td>
+
+                        <td class="fw-bold">
+                            @Html.DisplayFor(modelItem => item.Nome)
+                        </td>
+
+                        <td>
+                            <span class="badge bg-secondary">
+                                @Html.DisplayFor(modelItem => item.Categoria.Nome)
+                            </span>
+                        </td>
+
+                        <td class="text-success fw-bold">
+                            R$ @Html.DisplayFor(modelItem => item.Preco)
+                        </td>
+
+                        <td class="text-end">
+                            <div class="btn-group btn-group-sm">
+                                <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-outline-primary">Editar</a>
+                                <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-outline-info">Ver</a>
+                                <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-outline-danger">Excluir</a>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

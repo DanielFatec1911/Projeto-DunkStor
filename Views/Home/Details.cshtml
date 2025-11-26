@@ -1,0 +1,43 @@
+﻿@model DunkStore.Models.Produto
+
+@{
+    ViewData["Title"] = Model.Nome;
+}
+
+<div class="container mt-5 mb-5">
+    <div class="card shadow-lg border-0 overflow-hidden">
+        <div class="row g-0">
+            <!-- Coluna da Imagem -->
+            <div class="col-md-6 bg-light d-flex align-items-center justify-content-center p-5">
+                <img src="@Model.ImagemUrl" class="img-fluid rounded shadow-sm"
+                     style="max-height: 400px; object-fit: contain;"
+                     alt="@Model.Nome"
+                     onerror="this.src='[https://via.placeholder.com/400x400?text=Imagem+Indisponível](https://via.placeholder.com/400x400?text=Imagem+Indisponível)'">
+            </div>
+
+            <!-- Coluna das Informações -->
+            <div class="col-md-6 p-5 d-flex flex-column justify-content-center">
+                <div class="mb-3">
+                    <span class="badge bg-dark text-uppercase tracking-wider">@Model.Categoria.Nome</span>
+                </div>
+
+                <h1 class="display-5 fw-bold mb-3">@Model.Nome</h1>
+
+                <h2 class="text-warning display-4 fw-bold mb-4">R$ @Model.Preco.ToString("N2")</h2>
+
+                <p class="lead text-muted mb-5">
+                    @Model.Descricao
+                </p>
+
+                <div class="d-grid gap-3">
+                    <button class="btn btn-orange btn-lg py-3 text-uppercase fw-bold shadow">
+                        <i class="fa-solid fa-cart-shopping me-2"></i> Adicionar ao Carrinho
+                    </button>
+                    <a asp-action="Index" class="btn btn-outline-dark btn-lg">
+                        Continuar Comprando
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

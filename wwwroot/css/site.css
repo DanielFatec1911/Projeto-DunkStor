@@ -1,0 +1,110 @@
+/* Fonte estilo Esporte */
+@import url('[https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Roboto:wght@400;700&display=swap](https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Roboto:wght@400;700&display=swap)');
+
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+h1, h2, h3, h4, h5, .navbar-brand {
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+}
+
+/* Navbar Estilizada */
+.bg-basketball {
+    background-color: #111 !important; /* Preto quase puro */
+    border-bottom: 4px solid #ff6b00; /* Linha laranja embaixo */
+}
+
+.navbar-brand {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #ff6b00 !important; /* Laranja */
+    font-style: italic;
+}
+
+.nav-link {
+    color: #fff !important;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+    .nav-link:hover {
+        color: #ff6b00 !important;
+    }
+
+/* Botões Personalizados */
+.btn-orange {
+    background-color: #ff6b00;
+    color: white;
+    font-weight: bold;
+    border: none;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+    .btn-orange:hover {
+        background-color: #e65100;
+        color: white;
+        transform: scale(1.05);
+    }
+
+/* Cards de Produtos */
+.card-product {
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+    background: white;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+    .card-product:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    }
+
+.card-price {
+    color: #ff6b00;
+    font-weight: 800;
+    font-size: 1.4rem;
+}
+
+/* Tabelas do Admin */
+.table-hover tbody tr:hover {
+    background-color: rgba(255, 107, 0, 0.1);
+}
+
+/* Rodapé Premium */
+.footer-basketball {
+    background-color: #1a1a1a; /* Cinza muito escuro */
+    color: #ccc;
+    border-top: 5px solid #ff6b00; /* Linha laranja grossa no topo */
+    padding-top: 3rem;
+    padding-bottom: 2rem;
+}
+
+.footer-heading {
+    color: #ff6b00;
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+}
+
+.footer-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
